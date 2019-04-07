@@ -1,17 +1,19 @@
+ [![npm version](https://badge.fury.io/js/enigma-securities.svg)](https://badge.fury.io/js/enigma-securities)
+
 # Enigma Securities API
 
-A NodeJs library for trading with the Enigma Securities platform.  For more information on the firm, please see:
+A NodeJs library for trading with the Enigma Securities platform
 
-https://enigma-securities.io
+For more information on the firm, please see: https://enigma-securities.io
 
-# Install
+## Install
 
 The library is available from NpmJs and can be installed in the usual manner:
 ```
 npm install enigma-securities
 ```
 
-# Use
+## Use
 
 The module exports a factory so that multiple connections can be managed and thus connection objects must be created:
 ```js
@@ -31,11 +33,11 @@ const prod = new Enigma(ENIGMA_USERNAME, ENIGMA_PASSWORD)
 const prod = new Enigma(ENIGMA_USERNAME, ENIGMA_PASSWORD, 'test')
 ```
 
-# API
+## API
 
 The following methods are supported:
 
-## products
+### products
 
 Lists the products available in the platform.  The return value is an object with crosses for keys
 and product ids for values.  It will generally look like this:
@@ -47,7 +49,7 @@ and product ids for values.  It will generally look like this:
 }
 ```
 
-## price(id)
+### price(id)
 
 Receives the product id to quote and returns spot, bid and ask for the product.  The return object
 looks more or less like this:
@@ -61,15 +63,15 @@ looks more or less like this:
 }
 ```
 
-## buy(id, type, qty)
-## sell(id, type, qty)
+### buy(id, type, qty)
+### sell(id, type, qty)
 * id: the product id received from `products`
 * type: specifies the metric of the quantity.  can be one of: *fiat* or *crypto*
 * qty: the amount for the trade
 
 buy or sell
 
-## trades [intraday]
+### trades [intraday]
 
 Returns an array of trades performed for the account.  If a true value is passed to the method,
 only intraday trades are returned.  The output looks like this:
@@ -78,7 +80,7 @@ only intraday trades are returned.  The output looks like this:
 
 ]
 ```
-# Testing
+## Testing
 
 A test suite is available and comprises primarily integration tests, so you can use it to make
 sure you can reach the platform.  Run like this:
@@ -86,10 +88,10 @@ sure you can reach the platform.  Run like this:
 npm test
 ```
 
-# Licence
+## Licence
 
 MIT
 
-# Support
+## Support
 
 For support post an issue on Github or reach out to me on Telegram. My username is [@ekkis](https://t.me/ekkis)
