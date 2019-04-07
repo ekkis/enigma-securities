@@ -56,8 +56,9 @@ and product ids for values.  It will generally look like this:
 ```
 
 ### price(id)
+* **id:** the product id returned from the `products()` method
 
-Receives the product id to quote and returns spot, bid and ask for the product.  The return object
+The method returns the spot, bid and ask prices for the product.  The returned object
 looks more or less like this:
 ```json
 {
@@ -71,11 +72,11 @@ looks more or less like this:
 
 ### buy(id, type, qty)
 ### sell(id, type, qty)
-* id: the product id received from `products`
-* type: specifies the metric of the quantity.  can be one of: *fiat* or *crypto*
-* qty: the amount for the trade
+* **id:** the product id received from `products`
+* **type:** specifies the metric of the quantity.  can be one of: `fiat` or `crypto`
+* **qty:** the amount for the trade
 
-buy or sell
+Use these methods to buy or sell a given asset
 
 ### trades [intraday]
 
