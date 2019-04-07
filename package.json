@@ -1,0 +1,25 @@
+{
+  "name": "enigma-securities",
+  "version": "1.0.0",
+  "description": "A NodeJs library for the Enigma Securities API",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha t/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekkis/enigma-securities.git"
+  },
+  "keywords": [
+    "trading",
+    "exchange",
+    "liquidity",
+    "crypto"
+  ],
+  "author": "ekkis <e@arix.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekkis/enigma-securities/issues"
+  },
+  "homepage": "https://github.com/ekkis/enigma-securities#readme"
+}
