@@ -69,6 +69,12 @@ describe('Enigma Securities API', () => {
         assert.deepEqual(actual, expected)
 // console.log(actual)
     })
+    it ('trade', async () => {
+        var actual = await ex.trade(1, 'sell', 'fiat', 100)
+        var expected = {}
+        assert.deepEqual(actual, expected)
+// console.log(actual)
+    })
     it ('trades', async () => {
         var actual = await ex.trades()
         var expected = []

@@ -63,21 +63,19 @@ module.exports = function(username, password, env = 'prod') {
         price(id) {
             return get('/spot/' + id)
         },
-        buy(id, type, qty) {
+        trade(id, op, qty, qty_type) {
             return post('/order/new', {
                 crypto_product_id: id,
-                side_id: 1,
-                [type == 'crypto' ? 'quantity' : 'nominal']: qty,
+                side_id: op == 'buy' ? 1 : 2,
+                [qty_type == 'crypto' ? 'quantity' : 'nominal']: qty,
                 infra: env
             })
         },
-        sell(id, type, qty) {
-            return post('/order/new', {
-                crypto_product_id: id,
-                side_id: 2,
-                [type == 'crypto' ? 'quantity' : 'nominal']: qty,
-                infra: env
-            })
+        buy(id, qty, qty_type = 'fiat') {
+            return this.trade(id, 'buy', qty, qty_type)
+        },
+        sell(id, qty, qty_type = 'fiat') {
+            return this.trade(id, 'sell', qty, qty_type)
         },
         trades(intraday = false) {
             return get('/order/client/list' + (intraday ? '/true' : ''))

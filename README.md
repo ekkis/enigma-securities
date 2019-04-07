@@ -70,14 +70,30 @@ looks more or less like this:
 }
 ```
 
-### buy(id, type, qty)
-### sell(id, type, qty)
+### buy(id, qty, type)
+### sell(id, qty, type)
 * **id:** the product id received from `products`
-* **type:** specifies the metric of the quantity.  can be one of: `fiat` or `crypto`
+* **type:** specifies the metric of the quantity.  can be one of: `fiat` or `crypto`.
+  if left unspecified, defaults to fiat
 * **qty:** the amount for the trade
 
 Use these methods to buy or sell a given asset
 
+### trade(id, op, qty, type)
+* **op:** one of: `buy` or `sell`
+
+An interface useful for when the type of operation must be deduced from data.  Allows writing
+simpler code:
+```js
+// you can write
+prod.trade(1, bal < 0 ? 'sell' : 'buy', 100)
+
+// instead of
+if (bal < 0)
+   prod.sell(1, 100)
+else
+   prod.buy(1, 100)
+```
 ### trades [intraday]
 
 Returns an array of trades performed for the account.  If a true value is passed to the method,
