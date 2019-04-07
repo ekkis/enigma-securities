@@ -30,7 +30,7 @@ const prod = new Enigma(ENIGMA_USERNAME, ENIGMA_PASSWORD)
 
 // create a connection to the development sandbox
 
-const prod = new Enigma(ENIGMA_USERNAME, ENIGMA_PASSWORD, 'test')
+const dev = new Enigma(ENIGMA_USERNAME, ENIGMA_PASSWORD, 'test')
 ```
 
 ## API
