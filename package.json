@@ -1,6 +1,6 @@
 {
   "name": "enigma-securities",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A NodeJs library for the Enigma Securities API",
   "main": "index.js",
   "scripts": {
