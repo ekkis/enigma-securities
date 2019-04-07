@@ -8,7 +8,7 @@ For more information on the firm, please see: https://enigma-securities.io
 
 ## Install
 
-The library is available from NpmJs and can be installed in the usual manner:
+The library is available from [npmjs.com](https://npmjs.com) and can be installed in the usual manner:
 ```
 $ npm install enigma-securities
 ```
