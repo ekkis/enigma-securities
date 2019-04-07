@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha t/*.js",
-    // "preversion": "npm test",
+    "_preversion": "npm test",
     "postversion": "git push --tags && npm publish"
   },
   "repository": {
